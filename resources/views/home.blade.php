@@ -54,21 +54,23 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>65</h3>
+                  <h3 style="color: white">65</h3>
     
-                  <p>Potential Customers</p>
+                  <p style="color: white">Potential Customers</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="#" class="small-box-footer">Users registered on the app</a>
+                <a href="#" class="small-box-footer" style="color: white">Users registered on the app</a>
               </div>
             </div>
             <!-- ./col -->
         </div>
+        <div class="">
+            <canvas id="myChart" width="200" height="500"></canvas>
+        </div>
+
     </div>
-
-
 </div>
 </div>
 @endsection
