@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('Is_vendor')->default(true);
+            $table->boolean('is_vendor')->default(true);
             $table->string('email')->unique();
             $table->string('mobile_number')->nullable();
             $table->integer('wallet_balance')->default(0);

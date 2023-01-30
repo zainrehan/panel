@@ -21,7 +21,8 @@ class PrintController extends Controller
 
     public function currentorder(){
         $requests = PrintRequest::all();
-        $data = compact('requests');
+        $userid = Auth::user()->id;
+        $data = compact('requests', 'userid');
         return view('currentorder')->with($data);
     }
 

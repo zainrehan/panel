@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('color');
             $table->string('file');
             $table->string('status');
+            $table->integer('vendor_id')->nullable();
             $table->string('note')->nullable();
             $table->timestamps();
         });
