@@ -39,6 +39,12 @@ class PrintController extends Controller
         return view('order-history')->with($data);
     }
 
+    public function acceptedorder() {
+        $requests = PrintRequest::all();
+        $data = compact('requests');
+        return view('acceptedorder')->with($data);
+    }
+
     public function manageaccount(){
         return view('manage-account');
     }

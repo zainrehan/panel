@@ -60,6 +60,12 @@
                     </a>
                   </li>
                   <li class="nav-item">
+                    <a href="{{url('/acceptedorder')}}" class="nav-link {{Route::is('acceptedorder')? 'active' : ''}}">
+                      <i class="nav-icon fa fa-check"></i>
+                      <p>Accepted Orders</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
                     <a href="{{url('/cancelledorder')}}" class="nav-link {{Route::is('cancelledorder')? 'active' : ''}}">
                       <i class="nav-icon fa fa-ban"></i>
                       <p>Cancelled Orders</p>

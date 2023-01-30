@@ -25,5 +25,6 @@ Route::get('/home', [App\Http\Controllers\PrintController::class, 'dashboard'])-
 
 Route::get('/currentorder', [App\Http\Controllers\PrintController::class, 'currentorder'])->name('currentorder');
 Route::get('/cancelledorder', [App\Http\Controllers\PrintController::class, 'cancelledorder'])->name('cancelledorder');
+Route::get('/acceptedorder', [App\Http\Controllers\PrintController::class, 'acceptedorder'])->name('acceptedorder');
 Route::get('/order-history', [App\Http\Controllers\PrintController::class, 'orderhistory'])->name('orderhistory');
 Route::get('/manage-account', [App\Http\Controllers\PrintController::class, 'manageaccount'])->name('manageaccount');
