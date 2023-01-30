@@ -22,7 +22,7 @@
                 @endforeach --}}
 
                 @foreach ($requests as $request)
-                @if($request->status == 'accepted')
+                @if($request->status == 'Accepted')
                 <tr> 
                 <td scope="row">{{$request->id}}</td>
                 <td> {{$request->customer_name}}</td>
