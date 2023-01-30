@@ -16,6 +16,19 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($requests as $item)
+                @if($item->status != "Pending")
+                <tr>
+                    <td>{{$item->id}}</td>
+                    <td>{{$item->customer_name}}</td>
+                    <td>{{$item->noOfCopies}}</td>
+                    <td>{{$item->color}}</td>
+                    <td>{{$item->file}}</td>
+                    <td>{{$item->status}}</td>
+                </tr>
+                @endif
+                    
+                @endforeach
                 {{-- @foreach ($servers as $server)
                     <tr>
                         <td scope="row">{{ $server->server_name }}</td>

@@ -32,55 +32,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 @include('layouts.footer')
 
-
-
-
 </body>
-<script>
-const ctx = document.getElementById('myChart');
-
-new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow'],
-    datasets: [{
-      label: 'Order Details',
-      data: [12, 19, 3],
-      borderWidth: 1,
-      radius: 200
-    }]
-    
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
-  // var pieData = [
-  //     {
-  //         value: 20,
-  //         color:"#878BB6"
-  //     },
-  //     {
-  //         value : 40,
-  //         color : "#4ACAB4"
-  //     },
-  //     {
-  //         value : 10,
-  //         color : "#FF8153"
-  //     },
-  //     {
-  //         value : 30,
-  //         color : "#FFEA88"
-  //     }
-  // ];
-  // // Get the context of the canvas element we want to select
-  // var countries= document.getElementById("countries").getContext("2d");
-  // new Chart(countries).Pie(pieData);
-</script>
 </html>

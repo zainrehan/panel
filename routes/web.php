@@ -19,7 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\PrintController::class, 'dashboard'])->name('home');
+
+
 Route::get('/currentorder', [App\Http\Controllers\PrintController::class, 'currentorder'])->name('currentorder');
 Route::get('/cancelledorder', [App\Http\Controllers\PrintController::class, 'cancelledorder'])->name('cancelledorder');
 Route::get('/order-history', [App\Http\Controllers\PrintController::class, 'orderhistory'])->name('orderhistory');

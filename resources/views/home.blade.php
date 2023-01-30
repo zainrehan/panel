@@ -9,7 +9,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3>{{$requests->count()}}</h3>
 
                   <p>New Orders</p>
                 </div>
@@ -24,7 +24,7 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
+                  <h3>{{$accepted->count()}}<sup style="font-size: 20px"></sup></h3>
     
                   <p>Confirmed Orders</p>
                 </div>
@@ -39,7 +39,7 @@
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3>44</h3>
+                  <h3>{{$cancelled->count()}}</h3>
     
                   <p>Cancelled Orders</p>
                 </div>
@@ -54,7 +54,7 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3 style="color: white">65</h3>
+                  <h3 style="color: white">{{$users->count()}}</h3>
     
                   <p style="color: white">Potential Customers</p>
                 </div>
@@ -73,5 +73,33 @@
     </div>
 </div>
 </div>
+<script>
+  const ctx = document.getElementById('myChart');
+  
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Accepted', 'Cancelled', 'Pending'],
+      datasets: [{
+        label: 'Order Details',
+        data: [{{$accepted->count()}}, {{$cancelled->count()}}, {{$pending->count()}}],
+        borderWidth: 1,
+        radius: 200
+      }]
+      
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+  </script>
 @endsection
+
+
 

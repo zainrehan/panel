@@ -13,17 +13,37 @@
                     <th>Number of Copies</th>
                     <th>Size</th>
                     <th>Color</th>
-                    <th>Actions</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach ($servers as $server)
+                {{-- @foreach ($requests as $request )
+                hello
+                    
+                @endforeach --}}
+
+                @foreach ($requests as $request)
+                @if($request->status == 'Pending')
+                <tr> 
+                <td scope="row">{{$request->id}}</td>
+                <td> {{$request->customer_name}}</td>
+                <td> {{$request->noOfCopies}}</td>
+                <td> {{$request->size}}</td>
+                <td> {{$request->color}}</td>
+                <td> {{$request->status}}</td>
+            </tr>
+            @endif
+                @endforeach
+                    
+                
+
+                {{-- @foreach ($requests as $request)
                     <tr>
-                        <td scope="row">{{ $server->server_name }}</td>
-                        <td>{{ $server->region }}</td>
-                        <td>{{ $server->hostname }}</td>
-                        <td>{{ $server->server_username }}</td>
-                        <td>{{ $server->server_password }}</td>
+                        <td scope="row">{{ $request->customer_name }}</td>
+                        <td>{{ $request->id }}</td>
+                        <td>{{ $request->id}}</td>
+                        <td>{{ $request->id }}</td>
+                        <td>{{ $request->id }}</td>
                         <td>{{ $server->flag_code }}</td>
                         <td>
                             @if ($server->premium_server)
