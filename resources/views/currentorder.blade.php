@@ -5,8 +5,8 @@
 <div class="container">
 
     <div class="card">
-        <table class="table" style="background-color: rgb(3, 192, 3); color:white">
-            <thead>
+        <table class="table">
+            <thead style="background-color:cornflowerblue ; color:white">
                 <tr>
                     <th>Order ID</th>
                     <th>Customer Name</th>
@@ -14,6 +14,7 @@
                     <th>Size</th>
                     <th>Color</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,7 +24,7 @@
                 @endforeach --}}
 
                 @foreach ($requests as $request)
-                @if($request->status == 'Pending')
+                @if($request->status == 'pending')
                 <tr> 
                 <td scope="row">{{$request->id}}</td>
                 <td> {{$request->customer_name}}</td>
@@ -31,6 +32,9 @@
                 <td> {{$request->size}}</td>
                 <td> {{$request->color}}</td>
                 <td> {{$request->status}}</td>
+                <td><button type="button" class="btn btn-success"><i class="nav-icon fa fa-check"></i></button>
+                    <button type="button" class="btn btn-danger"><i class="nav-icon fa fa-ban"></i></button>
+                </td>
             </tr>
             @endif
                 @endforeach

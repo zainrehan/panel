@@ -61,7 +61,7 @@
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="#" class="small-box-footer" style="color: white">Users registered on the app</a>
+                <a href="#" class="small-box-footer" style="font-weight: bold">User Registered on Application</a>
               </div>
             </div>
             <!-- ./col -->

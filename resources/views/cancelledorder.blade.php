@@ -4,8 +4,8 @@
 <div class="content-wrapper">
 <div class="container">
     <div class="card">
-        <table class="table" style="background-color: rgb(196, 11, 11); color:white">
-            <thead>
+        <table class="table">
+            <thead style="background-color: rgb(196, 11, 11); color:white">
                 <tr>
                     <th>Order ID</th>
                     <th>Customer Name</th>
@@ -18,7 +18,7 @@
             <tbody>
                 {{-- <pre><code>{{ json_encode($all, JSON_PRETTY_PRINT) }}</code></pre> --}}
                 @foreach ($all as $item)
-                @if($item->status == "Cancelled")
+                @if($item->status == "cancelled")
                 <tr>
                     <td>{{$item->id}}</td>
                     <td>{{$item->customer_name}}</td>

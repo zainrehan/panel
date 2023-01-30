@@ -4,8 +4,8 @@
 <div class="content-wrapper">
 <div class="container">
     <div class="card">
-        <table class="table" style="background-color:rgb(236, 163, 26); color:white">
-            <thead>
+        <table class="table">
+            <thead style="background-color:rgb(255, 182, 47) ; color:white">
                 <tr>
                     <th>Order ID</th>
                     <th>Customer Name</th>
