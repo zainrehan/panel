@@ -66,4 +66,17 @@ class PrintController extends Controller
 
         return view('currentorder')->with($data);
     }
+
+    public function cancelRequest($id)
+    {
+        $print_request = PrintRequest::find($id);
+        $print_request->status = "cancelled";
+        
+        $print_request->save();
+
+        $requests = PrintRequest::all();
+        $data = compact('requests');
+
+        return view('currentorder')->with($data);
+    }
 }

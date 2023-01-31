@@ -23,6 +23,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\PrintController::class, 'dashboard'])->name('home');
 
 Route::get('/accept-request/{id}', [App\Http\Controllers\PrintController::class, 'acceptRequest'])->name('acceptrequest');
+Route::get('/cancel-request/{id}', [App\Http\Controllers\PrintController::class, 'cancelRequest'])->name('cancelrequest');
+
 
 
 Route::get('/currentorder', [App\Http\Controllers\PrintController::class, 'currentorder'])->name('currentorder');
