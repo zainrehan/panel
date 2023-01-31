@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('print_requests', function (Blueprint $table) {
             $table->id();
             $table->string('customer_name')->nullable();
+            $table->integer('customer_id')->nullable();
             $table->integer('noOfCopies')->default(0);
             $table->string('size');
             $table->string('color');
