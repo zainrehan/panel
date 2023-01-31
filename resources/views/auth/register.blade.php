@@ -74,6 +74,17 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Location') }}</label>
+
+                            <div class="col-md-6">
+                                <a onclick="getLocation()"> Click me</a>
+                                <input id="location" type="text" class="form-control" name="location" required>
+                                <p id="demo">
+                                
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -90,6 +101,22 @@
 @endsection
 
 <script>
+    var x = document.getElementById("demo").innerHTML;
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
+    x.innerHTML = position.coords.latitude;
+}
+
     function onlyNumberKey(evt) {
           
         // Only ASCII character in that range allowed
