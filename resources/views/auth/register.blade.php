@@ -75,13 +75,12 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Location') }}</label>
+                            <label for="location" class="col-md-4 col-form-label text-md-end">{{ __('Location') }}</label>
 
                             <div class="col-md-6">
-                                <a onclick="getLocation()"> Click me</a>
-                                <input id="location" type="text" class="form-control" name="location" required>
-                                <p id="demo">
-                                
+                                <button type="button" class="btn btn-info" onclick="getLocation()" style="color:white; font-weight:bold">Get Location</button>
+                                <br><br>    
+                                <input id="location" type="text" class="form-control" name="location" value="" required>
                             </div>
                         </div>
 
@@ -98,11 +97,7 @@
         </div>
     </div>
 </div>
-@endsection
-
 <script>
-    var x = document.getElementById("demo").innerHTML;
-
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -114,11 +109,13 @@ function getLocation() {
 function showPosition(position) {
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
-    x.innerHTML = position.coords.latitude;
+    var x = document.getElementById('location').value = position.coords.latitude + " , " + position.coords.longitude;
 }
+</script>
+@endsection
 
+<script>
     function onlyNumberKey(evt) {
-          
         // Only ASCII character in that range allowed
         var ASCIICode = (evt.which) ? evt.which : evt.keyCode
         if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
