@@ -13,6 +13,8 @@
                     <th>Number of Copies</th>
                     <th>Size</th>
                     <th>Color</th>
+                    <th>File</th>
+                    <th>Note</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -32,6 +34,8 @@
                         <td> {{$request->noOfCopies}}</td>
                         <td> {{$request->size}}</td>
                         <td> {{$request->color}}</td>
+                        <td> <a href="{{$request->file}}">Download File</a></td>
+                        <td> {{$request->note}}</td>
                         <td> <span class="badge badge-warning">Pending</span></td>
                         <td>
                             <a href="{{url('/accept-request')}}/{{$request->id}}"><button type="button" class="btn btn-success"><i class="nav-icon fa fa-check"></i></button></a>
