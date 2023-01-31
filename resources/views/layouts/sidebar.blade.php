@@ -2,7 +2,7 @@
  <aside class="main-sidebar sidebar-dark-primary elevation-4"style="background-color: #03254c">
     <!-- Brand Logo -->
     <a href="{{url('/')}}" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="assets/img/Print-it-logo-2.png" alt="AdminLTE Logo"style="width:12%; margin-left:10px">
       <span class="brand-text font-weight-bold" style="color: white">PRINT IT</span>
     </a>
 
