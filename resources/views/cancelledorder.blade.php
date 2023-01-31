@@ -12,6 +12,7 @@
                     <th>Number of Copies</th>
                     <th>Size</th>
                     <th>Color</th>
+                    <th>Note</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -19,14 +20,17 @@
                 {{-- <pre><code>{{ json_encode($all, JSON_PRETTY_PRINT) }}</code></pre> --}}
                 @foreach ($all as $item)
                 @if($item->status == "cancelled")
+                @if($item->vendor_id == $userid)
                 <tr>
                     <td>{{$item->id}}</td>
                     <td>{{$item->customer_name}}</td>
                     <td>{{$item->noOfCopies}}</td>
+                    <td>{{$item->size}}</td>
                     <td>{{$item->color}}</td>
-                    <td>{{$item->file}}</td>
-                    <td>{{$item->status}}</td>
+                    <td> {{$item->note}}</td>
+                    <td><span class="badge badge-danger">Cancelled</span></td>
                 </tr>
+                @endif
                 @endif
                     
                 @endforeach

@@ -18,14 +18,23 @@
             <tbody>
                 @foreach ($requests as $item)
                 @if($item->status != "Pending")
+                @if($item->vendor_id == $userid)
                 <tr>
                     <td>{{$item->id}}</td>
                     <td>{{$item->customer_name}}</td>
                     <td>{{$item->noOfCopies}}</td>
+                    <td>{{$item->size}}</td>
                     <td>{{$item->color}}</td>
-                    <td>{{$item->file}}</td>
-                    <td>{{$item->status}}</td>
+                    
+                    <td>
+                        @if($item->status === "accepted")
+                        <span class="badge badge-success">Accepted</span>
+                        @else
+                        <span class="badge badge-danger">Cancelled</span>
+                        @endif
+                    </td>
                 </tr>
+                @endif
                 @endif
                     
                 @endforeach

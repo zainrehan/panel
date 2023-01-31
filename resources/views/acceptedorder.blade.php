@@ -12,6 +12,7 @@
                     <th>Number of Copies</th>
                     <th>Size</th>
                     <th>Color</th>
+                    <th>Note</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -23,14 +24,17 @@
 
                 @foreach ($requests as $request)
                 @if($request->status == 'accepted')
+                @if($request->vendor_id == $userid)
                 <tr> 
                 <td scope="row">{{$request->id}}</td>
                 <td> {{$request->customer_name}}</td>
                 <td> {{$request->noOfCopies}}</td>
                 <td> {{$request->size}}</td>
                 <td> {{$request->color}}</td>
-                <td> {{$request->status}}</td>
+                <td> {{$request->note}}</td>
+                <td> <span class="badge badge-success">Accepted</span></td>
             </tr>
+            @endif
             @endif
                 @endforeach
                     

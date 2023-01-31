@@ -30,24 +30,40 @@ class PrintController extends Controller
     public function cancelledorder(){
         $cancelled = PrintRequest::where('status', '=', 'Cancelled');
         $users = User::all();
+        $userid = Auth::user()->id;
         $all = PrintRequest::all();
-        $data = compact('cancelled', 'users', 'all');
+        $data = compact('cancelled', 'users', 'all', 'userid');
         return view('cancelledorder')->with($data);
     }
 
     public function orderhistory(){
         $requests = PrintRequest::all();
-        $data = compact('requests');
+        $userid = Auth::user()->id;
+        $data = compact('requests', 'userid');
         return view('order-history')->with($data);
     }
 
     public function acceptedorder() {
         $requests = PrintRequest::all();
-        $data = compact('requests');
+        $userid = Auth::user()->id;
+        $data = compact('requests', 'userid');
         return view('acceptedorder')->with($data);
     }
 
     public function manageaccount(){
         return view('manage-account');
+    }
+
+    public function acceptRequest($id)
+    {
+        $print_request = PrintRequest::find($id);
+        $print_request->status = "accepted";
+        
+        $print_request->save();
+
+        $requests = PrintRequest::all();
+        $data = compact('requests');
+
+        return view('currentorder')->with($data);
     }
 }

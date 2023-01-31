@@ -25,17 +25,20 @@
 
                 @foreach ($requests as $request)
                 @if($request->status == 'pending')
-                <tr> 
-                <td scope="row">{{$request->id}}</td>
-                <td> {{$request->customer_name}}</td>
-                <td> {{$request->noOfCopies}}</td>
-                <td> {{$request->size}}</td>
-                <td> {{$request->color}}</td>
-                <td> {{$request->status}}</td>
-                <td><button type="button" class="btn btn-success"><i class="nav-icon fa fa-check"></i></button>
-                    <button type="button" class="btn btn-danger"><i class="nav-icon fa fa-ban"></i></button>
-                </td>
-            </tr>
+                    @if($request->vendor_id == $userid)
+                    <tr> 
+                        <td scope="row">{{$request->id}}</td>
+                        <td> {{$request->customer_name}}</td>
+                        <td> {{$request->noOfCopies}}</td>
+                        <td> {{$request->size}}</td>
+                        <td> {{$request->color}}</td>
+                        <td> <span class="badge badge-warning">Pending</span></td>
+                        <td>
+                            <a href="{{url('/accept-request')}}/{{$request->id}}"><button type="button" class="btn btn-success"><i class="nav-icon fa fa-check"></i></button></a>
+                            <button type="button" class="btn btn-danger"><i class="nav-icon fa fa-ban"></i></button>
+                        </td>
+                    </tr>
+                    @endif
             @endif
                 @endforeach
                     
