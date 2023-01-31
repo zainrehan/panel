@@ -80,7 +80,8 @@
                             <div class="col-md-6">
                                 <button type="button" class="btn btn-info" onclick="getLocation()" style="color:white; font-weight:bold">Get Location</button>
                                 <br><br>    
-                                <input id="location" type="text" class="form-control" name="location" value="" required>
+                                <input id="latitude" type="text" class="form-control" name="location" value="" placeholder="Latitude" required>
+                                <input id="longitude" type="text" class="form-control" name="location" value="" placeholder="longitude" required>
                             </div>
                         </div>
 
@@ -109,7 +110,8 @@ function getLocation() {
 function showPosition(position) {
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
-    var x = document.getElementById('location').value = position.coords.latitude + " , " + position.coords.longitude;
+    var x = document.getElementById('latitude').value = position.coords.latitude;
+    var y = document.getElementById('longitude').value = position.coords.longitude;
 }
 </script>
 @endsection
