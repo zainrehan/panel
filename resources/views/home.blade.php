@@ -54,7 +54,7 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3 style="color: white">{{$users->count()}}</h3>
+                  <h3 style="color: white">{{$potential->count()}}</h3>
     
                   <p style="color: white">Potential Customers</p>
                 </div>

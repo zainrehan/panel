@@ -34,7 +34,7 @@
                         <td> {{$request->noOfCopies}}</td>
                         <td> {{$request->size}}</td>
                         <td> {{$request->color}}</td>
-                        <td> <a href="{{$request->file}}">Download File</a></td>
+                        <td> <a href="{{$request->file}}" target="_blank" >Download File</a></td>
                         <td> {{$request->note}}</td>
                         <td> <span class="badge badge-warning">Pending</span></td>
                         <td>

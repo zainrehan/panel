@@ -25,8 +25,11 @@ class PrintController extends Controller
             ['status', 'pending'],
             ['vendor_id', Auth::user()->id]
         ]);
-        $users = User::all();
-        $data = compact('requests','accepted', 'cancelled', 'users', 'pending');
+        //$users = User::all();
+        $potential = user::where([
+            ['is_vendor','0']
+        ]);
+        $data = compact('requests','accepted', 'cancelled', 'potential', 'pending');
         return view('home')->with($data);
     }
 
