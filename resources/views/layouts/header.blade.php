@@ -8,7 +8,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button" ><i class="fas fa-bars" style="color:white"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{url('/homepage')}}" class="nav-link font-weight-bold" style="color:white">Home</a>
+            <a href="{{url('/homepage')}}" class="nav-link font-weight-bold" style="color:black">Home</a>
         </li>
             {{-- <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">Contact</a>
