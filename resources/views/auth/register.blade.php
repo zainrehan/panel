@@ -80,8 +80,8 @@
                             <div class="col-md-6">
                                 <button type="button" class="btn btn-info" onclick="getLocation()" style="color:white; font-weight:bold">Get Location</button>
                                 <br><br>    
-                                <input id="latitude" type="text" class="form-control" name="location" value="" placeholder="Latitude" required>
-                                <input id="longitude" type="text" class="form-control" name="location" value="" placeholder="longitude" required>
+                                <input id="latitude" type="text" class="form-control" name="latitude" value="" placeholder="Latitude" required>
+                                <input id="longitude" type="text" class="form-control" name="longitude" value="" placeholder="longitude" required>
                             </div>
                         </div>
 

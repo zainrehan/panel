@@ -9,7 +9,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>{{$requests->count()}}</h3>
+                  <h3>{{$pending->count()}}</h3>
 
                   <p>New Orders</p>
                 </div>
@@ -61,7 +61,7 @@
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="#" class="small-box-footer" style="font-weight: bold">User Registered on Application</a>
+                <a href="#" class="small-box-footer" style="font-weight: bold">Users Registered on Application</a>
               </div>
             </div>
             <!-- ./col -->

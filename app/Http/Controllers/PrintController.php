@@ -12,16 +12,26 @@ class PrintController extends Controller
     public function dashboard()
     {
         $requests = PrintRequest::all();
-        $accepted = PrintRequest::where('status', '=', 'Accepted');
-        $cancelled = PrintRequest::where('status', '=', 'Cancelled');
-        $pending = PrintRequest::where('status', '=', 'Pending');
+        $accepted = PrintRequest::where([
+            ['status', 'accepted'],
+            ['vendor_id', Auth::user()->id]
+        ]);
+
+        $cancelled = PrintRequest::where([
+            ['status', 'cancelled'],
+            ['vendor_id', Auth::user()->id]
+        ]);
+        $pending = PrintRequest::where([
+            ['status', 'pending'],
+            ['vendor_id', Auth::user()->id]
+        ]);
         $users = User::all();
         $data = compact('requests','accepted', 'cancelled', 'users', 'pending');
         return view('home')->with($data);
     }
 
     public function currentorder(){
-        $requests = PrintRequest::all();
+        $requests = PrintRequest::all()->reverse();
         $userid = Auth::user()->id;
         $data = compact('requests', 'userid');
         return view('currentorder')->with($data);
