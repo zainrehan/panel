@@ -64,6 +64,7 @@ class PrintController extends Controller
     }
 
     public function manageaccount(){
+     
         return view('manage-account');
     }
 

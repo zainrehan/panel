@@ -14,20 +14,33 @@
             <div class="card-body" style="background-image: url('assets/img/holi-color-background-white-background.jpg')">
                 <div class="form-group">
                     <label for="name">Shop Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Shop Name">
+                    <input type="text" class="form-control" id="name" name="name" value="{{Auth::user()->name}}" placeholder="Enter Shop Name">
                 </div>
                 <div class="form-group">
                     <label for="server_region">Email Address</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address">
+                    <input type="email" class="form-control" id="email" name="email" value="{{Auth::user()->email}}" placeholder="Enter Email Address">
+                </div>
+                <div class="form-group"> 
+                    <label for="location">Location</label>
+                    <input id="latitude" type="text" class="form-control" name="latitude" value="{{Auth::user()->latitude}}" placeholder="Latitude" required>
+                    <input id="longitude" type="text" class="form-control" name="longitude" value="{{Auth::user()->longitude}}" placeholder="longitude" required>
                 </div>
                 <div class="form-group">
+                    <label for="priceblack">Price for Black&White</label>
+                    <input type="text" class="form-control" id="priceblack" name="priceblack" value="10" placeholder="Enter Price">
+                </div>
+                <div class="form-group">
+                    <label for="pricecolor">Price for Color</label>
+                    <input type="text" class="form-control" id="pricecolor" name="pricecolor" value="10" placeholder="Enter Price">
+                </div>
+                {{-- <div class="form-group">
                     <label for="server_hostname">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                    <input type="password" class="form-control" id="password" name="password" value="{{Auth::user()->password}}" placeholder="Enter Password">
                 </div>
                 <div class="form-group">
                     <label for="server_username">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirmpass" placeholder="Confirm Password">
-                </div>
+                    <input type="password" class="form-control" id="confirmpass" value="{{Auth::user()->}}" placeholder="Confirm Password">
+                </div> --}}
 
                 {{-- <div class="form-group">
           <label for="exampleInputFile">File input</label>
